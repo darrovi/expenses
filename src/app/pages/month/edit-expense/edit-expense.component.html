@@ -1,0 +1,12 @@
+<ion-content>
+  <ion-header class="ion-margin-bottom">
+    <ion-toolbar>
+      <ion-title>Edit expense</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon slot="icon-only" name="close" (click)="onClose()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-expense-form [expense]="expense" [buttonText]="'Edit'" (onSubmit)="onSubmit($event)"></app-expense-form>
+</ion-content>

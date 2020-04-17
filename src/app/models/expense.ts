@@ -3,6 +3,7 @@ export default class Expense {
         public title: string = '',
         public date: string = '',
         public quantity: number = null,
+        public isExpense: boolean = true,
     ) {
     }
 }

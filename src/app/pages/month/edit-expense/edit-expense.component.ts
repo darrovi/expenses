@@ -1,15 +1,15 @@
-import {Component} from '@angular/core';
-import {ModalController} from '@ionic/angular';
+import {Component, Input} from '@angular/core';
 import Expense from '../../../models/expense';
+import {ModalController} from '@ionic/angular';
 import {ExpensesService} from '../../../services/expenses.service';
 
 @Component({
-    selector: 'app-create-expense',
-    templateUrl: './create-expense.component.html',
-    styleUrls: ['./create-expense.component.scss'],
+    selector: 'app-edit-expense',
+    templateUrl: './edit-expense.component.html',
+    styleUrls: ['./edit-expense.component.scss'],
 })
-export class CreateExpenseComponent {
-    expense = new Expense('', new Date().toISOString());
+export class EditExpenseComponent {
+    @Input() expense: Expense;
 
     constructor(private modalController: ModalController,
                 private expensesService: ExpensesService) {
@@ -20,7 +20,7 @@ export class CreateExpenseComponent {
     }
 
     onSubmit(expense: Expense) {
-        this.expensesService.addExpense(expense);
+        this.expensesService.editExpense(expense);
         this.modalController.dismiss();
     }
 }

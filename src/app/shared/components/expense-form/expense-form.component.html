@@ -1,0 +1,27 @@
+<form #f="ngForm" (ngSubmit)="onSubmit.emit(expense)">
+    <ion-list class="ion-padding">
+        <ion-item mode="md">
+            <ion-label position="floating">Título</ion-label>
+            <ion-input type="text" required [(ngModel)]="expense.title" name="title"></ion-input>
+        </ion-item>
+        <ion-item mode="md">
+            <ion-label position="floating">Fecha</ion-label>
+            <ion-datetime mode="md" required [(ngModel)]="expense.date" name="date"
+                          displayFormat="DD MMM YYYY"></ion-datetime>
+        </ion-item>
+        <ion-item mode="md">
+            <ion-label position="floating">Cantidad</ion-label>
+            <ion-input type="number" min="0" required [(ngModel)]="expense.quantity" name="quantity"></ion-input>
+        </ion-item>
+
+        <ion-item mode="md">
+            <ion-label>¿Es un gasto?</ion-label>
+            <ion-checkbox slot="start" [(ngModel)]="expense.isExpense" name="isExpense"></ion-checkbox>
+        </ion-item>
+
+        <ion-button expand="block" fill="solid" color="primary" class="ion-margin-top" type="submit"
+                    [disabled]="!f.valid">
+            {{buttonText}}
+        </ion-button>
+    </ion-list>
+</form>

@@ -8,23 +8,28 @@ import {MonthlySummaryComponent} from './monthly-summary/monthly-summary.compone
 import {MonthlyExpensesComponent} from './monthly-expenses/monthly-expenses.component';
 import {MonthlyExpensesItemComponent} from './monthly-expenses/monthly-expenses-item/monthly-expenses-item.component';
 import {CreateExpenseComponent} from './create-expense/create-expense.component';
+import {SharedModule} from '../../shared/shared.module';
+import {EditExpenseComponent} from './edit-expense/edit-expense.component';
 
 @NgModule({
     imports: [
         IonicModule,
         CommonModule,
         FormsModule,
+        SharedModule,
         RouterModule.forChild([{path: '', component: MonthPage}])
     ],
     declarations: [
         MonthPage,
         CreateExpenseComponent,
+        EditExpenseComponent,
         MonthlySummaryComponent,
         MonthlyExpensesComponent,
-        MonthlyExpensesItemComponent
+        MonthlyExpensesItemComponent,
     ],
     entryComponents: [
-        CreateExpenseComponent
+        CreateExpenseComponent,
+        EditExpenseComponent
     ]
 })
 export class MonthModule {
