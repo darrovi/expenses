@@ -1,0 +1,33 @@
+<ion-content>
+    <ion-header class="ion-margin-bottom">
+        <ion-toolbar>
+            <ion-title>Create expense</ion-title>
+            <ion-buttons slot="end">
+                <ion-icon slot="icon-only" name="close" (click)="onClose()"></ion-icon>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <ion-list class="ion-padding">
+            <ion-item mode="md">
+                <ion-label position="floating">Título</ion-label>
+                <ion-input type="text" required [(ngModel)]="expense.title" name="title"></ion-input>
+            </ion-item>
+            <ion-item mode="md">
+                <ion-label position="floating">Fecha</ion-label>
+                <ion-datetime mode="md" required [(ngModel)]="expense.date" name="date"
+                              displayFormat="DD MMM YYYY"></ion-datetime>
+            </ion-item>
+            <ion-item mode="md">
+                <ion-label position="floating">Cantidad</ion-label>
+                <ion-input type="number" min="0" required [(ngModel)]="expense.quantity" name="quantity"></ion-input>
+            </ion-item>
+
+            <ion-button expand="block" fill="solid" color="primary" class="ion-margin-top" type="submit"
+                        [disabled]="!f.valid">
+                Crear
+            </ion-button>
+        </ion-list>
+    </form>
+</ion-content>

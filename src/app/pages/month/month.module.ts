@@ -7,6 +7,7 @@ import {MonthPage} from './month.page';
 import {MonthlySummaryComponent} from './monthly-summary/monthly-summary.component';
 import {MonthlyExpensesComponent} from './monthly-expenses/monthly-expenses.component';
 import {MonthlyExpensesItemComponent} from './monthly-expenses/monthly-expenses-item/monthly-expenses-item.component';
+import {CreateExpenseComponent} from './create-expense/create-expense.component';
 
 @NgModule({
     imports: [
@@ -17,9 +18,13 @@ import {MonthlyExpensesItemComponent} from './monthly-expenses/monthly-expenses-
     ],
     declarations: [
         MonthPage,
+        CreateExpenseComponent,
         MonthlySummaryComponent,
         MonthlyExpensesComponent,
         MonthlyExpensesItemComponent
+    ],
+    entryComponents: [
+        CreateExpenseComponent
     ]
 })
 export class MonthModule {

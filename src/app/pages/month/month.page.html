@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Abril 2020
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <!--    <app-monthly-summary></app-monthly-summary>-->
+    <ion-header collapse="condense" class="ion-margin-bottom">
+        <ion-toolbar>
+            <ion-title size="large">
+                Abril 2020
+            </ion-title>
+            <ion-buttons slot="end">
+                <ion-icon slot="icon-only" name="add" (click)="onAdd()"></ion-icon>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+
+    <app-monthly-expenses></app-monthly-expenses>
+</ion-content>

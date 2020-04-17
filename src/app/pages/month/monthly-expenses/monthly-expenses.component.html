@@ -1,0 +1,5 @@
+<ion-list>
+    <app-monthly-expenses-item *ngFor="let expense of expensesService.expensesObs() | async"
+                               [expense]="expense">
+    </app-monthly-expenses-item>
+</ion-list>

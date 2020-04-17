@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import Expense from '../../../../models/expense';
 
 @Component({
     selector: 'app-monthly-expenses-item',
@@ -6,6 +7,8 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./monthly-expenses-item.component.scss'],
 })
 export class MonthlyExpensesItemComponent implements OnInit {
+
+    @Input() expense: Expense;
 
     constructor() {
     }
